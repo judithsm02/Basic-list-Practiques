@@ -6,6 +6,9 @@ sap.ui.define(     // es defineixen els moduls ( arxiu en java que té una funci
     
 
   ],
+
+  // NO ENTRA AL DETAIL
+  
  /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
@@ -29,85 +32,86 @@ sap.ui.define(     // es defineixen els moduls ( arxiu en java que té una funci
 _onObjectMatched: function (oEvent) {
     this.sObjectId = oEvent.getParameter("arguments").Carrid;
     this.getView().getModel("appView").setProperty("/layout", "TwoColumnsMidExpanded");
-//     this.getView().getModel().metadataLoaded().then(function () {
-//         var sObjectPath = this.getView().getModel().createKey("Carriers", {
-//             idLeague: this.sObjectId
-//         });
-//         this._bindView("/" + sObjectPath);
-//         console.log("Id DETALLE: ", this.sObjectId)                   
-//     }.bind(this));
-// },
+    this.getView().getModel().metadataLoaded().then(function () {
+        var sObjectPath = this.getView().getModel().createKey("Carriers", {
+            idLeague: this.sObjectId
+        });
+        this._bindView("/" + sObjectPath);
+        console.log("Id DETALLE: ", this.sObjectId)                   
+    }.bind(this));
+    
+},
 
-// _bindView: function (sObjectPath) {
-//     // Set busy indicator during view binding
-//     var oViewModel = this.getView().getModel("detailView");
-//     oViewModel.setProperty("/busy", false);   
+_bindView: function (sObjectPath) {
+    // Set busy indicator during view binding
+    var oViewModel = this.getView().getModel("detailView");
+    oViewModel.setProperty("/busy", false);   
 
-//     this.getView().bindElement({
-//         path: sObjectPath,
-//         parameters: {
-//             expand: "teams"
-//         },
+    this.getView().bindElement({
+        path: sObjectPath,
+        parameters: {
+            expand: "teams"
+        },
         
     
-//         events: {
-//             change: this._onBindingChange.bind(this),
-//             dataRequested: function (odata) {
-//                 oViewModel.setProperty("/busy", true);
-//             },
-//             dataReceived: function (odata) {
-//                 oViewModel.setProperty("/busy", false);
-//             }
-//         }
+        events: {
+            change: this._onBindingChange.bind(this),
+            dataRequested: function (odata) {
+                oViewModel.setProperty("/busy", true);
+            },
+            dataReceived: function (odata) {
+                oViewModel.setProperty("/busy", false);
+            }
+        }
 
-//     });
+    });
     
-// },
-// _onBindingChange: function () {
-//     var oView = this.getView(),
-//         oElementBinding = oView.getElementBinding();
-//     if (!oElementBinding.getBoundContext()) {
-//         this.getOwnerComponent().getRouter().getTargets().display("detailObjectNotFound");
-//         return;
-//     }
-//     var sPath = oElementBinding.getPath(),
-//         oObject = oView.getModel().getObject(sPath);
+},
+_onBindingChange: function () {
+    var oView = this.getView(),
+        oElementBinding = oView.getElementBinding();
+    if (!oElementBinding.getBoundContext()) {
+        this.getOwnerComponent().getRouter().getTargets().display("detailObjectNotFound");
+        return;
+    }
+    var sPath = oElementBinding.getPath(),
+        oObject = oView.getModel().getObject(sPath);
 
-//     this.oSemanticObject = oObject.type;              
-// },
+    this.oSemanticObject = oObject.type;              
+},
 
-// onCloseDetailPress: function () {
-//     this.getView().getModel("appView").setProperty("/layout", "OneColumn"); 
-//     this.getOwnerComponent().getRouter().navTo("RouteMain");
-// },
+onCloseDetailPress: function () {
+    this.getView().getModel("appView").setProperty("/layout", "OneColumn"); 
+    this.getOwnerComponent().getRouter().navTo("RouteMain");
+},
 
-// onPressOpenCreateTeam: function(){
+onPressOpenCreateTeam: function(){
 
-//     var oView = this.getView();
-//     var oModel = this.getView().getModel();
+    var oView = this.getView();
+    var oModel = this.getView().getModel();
 
 
-//     // create value help dialog
+    // create value help dialog
 
-//     if(!this._dialogCreateTeams){
-//         this._dialogCreateTeams = Fragment.load({
-//             id: oView.getId(),
-//             name: "appleagues.view.fragments.CreateTeam",
-//             controller: this
-//         },
+    if(!this._dialogCreateTeams){
+        this._dialogCreateTeams = Fragment.load({
+            id: oView.getId(),
+            name: "appleagues.view.fragments.CreateTeam",
+            controller: this
+        },
 
-//         ).then(function(oCreateDialog){
-//             oView.addDependent(oCreateDialog); // El addDependent es como unir el dialogo a su Vista ( siempre hay que hacerlo) al crear el fragmento
-//             return oCreateDialog;
+        ).then(function(oCreateDialog){
+            oView.addDependent(oCreateDialog); // El addDependent es como unir el dialogo a su Vista ( siempre hay que hacerlo) al crear el fragmento
+            return oCreateDialog;
 
-//         });
-//     }
+        });
+    }
     
 
-//     //open value help dialog
-//     this._dialogCreateTeams.then(function(oCreateDialog){
-//         oCreateDialog.open();
-//     })
+    //open value help dialog
+    this._dialogCreateTeams.then(function(oCreateDialog){
+        oCreateDialog.open();
+    })
 
     
 
