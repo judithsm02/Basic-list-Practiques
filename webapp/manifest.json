@@ -1,0 +1,146 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "student00.com.sap.training.ux402.listdetail2.ux402listdetail2",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.13.0",
+      "toolsId": "06bc06b3-1cdb-4915-b498-bf74281a3686"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/here/goes/your/serviceurl/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.96.11",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "student00.com.sap.training.ux402.listdetail2.ux402listdetail2.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "student00.com.sap.training.ux402.listdetail2.ux402listdetail2.view",
+        "controlAggregation": "beginColumnPages",
+        "controlId": "layout",
+        "bypassed": {
+            "target": [
+                "masterlist"
+            ]
+        }
+      },
+      "routes": [
+        {
+          "name": "masterlist",
+          "pattern": "",
+          "titleTarget": "",
+          "greedy": false,
+          "target": [
+              "masterlist"
+          ]       
+        },
+        {
+          "name": "carrierdetails",
+          "pattern": "Carriers/{objectId}",
+          "titleTarget": "",
+          "greedy": false,
+          "target": [
+              "masterlist",
+              "carrierdetails"
+          ]
+        }
+      ],
+      "targets": {
+        "masterlist": {
+          "viewType": "XML",
+          "transition": "slide",
+          "ControlAggregation": "beginColumnPages",
+          "viewId": "list",
+          "viewName": "List",
+          "viewLevel": 1
+        },
+        "carrierdetails": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewLevel": 2,
+          "controlAggregation": "midColumnPages",
+          "viewName": "Detail",
+          "viewId": "carrierdetails"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "student00.com.sap.training.ux402.listdetail2.ux402listdetail2.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

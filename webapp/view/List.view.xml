@@ -1,0 +1,48 @@
+<mvc:View controllerName="student00.com.sap.training.ux402.listdetail2.ux402listdetail2.controller.List"
+   xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f">
+
+<f:DynamicPage id="dynamicPageOverviewId" headerExpanded="true" toggleHeaderOnTitleClick="true">
+
+    <!--  headerexpanded="true"  encambezado expandido por defecto
+    toggleHeaderOnTitleClick="true" que ele encabezado apareza o no con el clic-->
+    <f:title>
+    <f:DynamicPageTitle id="DynamicPageTitle">
+                <f:heading>
+                    <Title id="title1" text="Carrier Management - Judith" /> 
+                </f:heading>
+            </f:DynamicPageTitle>
+    </f:title>
+
+    <f:content>
+        <List id="list"
+                    items="{/UX_C_Carrier_TP}"
+					busyIndicatorDelay="0"
+					growing="true"
+					growingThreshold="10"
+					growingScrollToLoad="true"
+					mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}"
+					selectionChange="onSelect">
+
+                        <items>
+                            <ObjectListItem
+                                id="objectListItem"
+							    title="{Carrname}"
+							    intro="{Carrid}"
+                                type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"
+                                press="onSelect">
+					        </ObjectListItem>
+                            
+                        </items>
+
+        </List>
+ </f:content>
+	</f:DynamicPage>
+
+
+
+
+
+
+</mvc:View>
