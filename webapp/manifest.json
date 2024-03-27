@@ -121,7 +121,7 @@
         "masterlist": {
           "viewType": "XML",
           "transition": "slide",
-          "ControlAggregation": "beginColumnPages",
+          "controlAggregation": "beginColumnPages",
           "viewId": "list",
           "viewName": "List",
           "viewLevel": 0

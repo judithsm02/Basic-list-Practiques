@@ -39,4 +39,36 @@ An SAP Fiori application.
 
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
+jquery-dbg.js:10224 
+ 
+ GET https://port8080-workspaces-ws-dkh4d.us10.trial.applicationstudio.cloud.sap/appconfig/fioriSandboxConfig.json 404 (Not Found)
+Log-dbg.js:452 
+ 2024-03-27 10:19:05.386600 sap.ushelContainer.createRenderer() should always be called with bAsync:true. -  
+jquery-dbg.js:10224 
+ 
+ GET https://port8080-workspaces-ws-dkh4d.us10.trial.applicationstudio.cloud.sap/test/i18n/i18n_en.properties 404 (Not Found)
+jquery-dbg.js:10224 
+ 
+ GET https://port8080-workspaces-ws-dkh4d.us10.trial.applicationstudio.cloud.sap/test/i18n/i18n.properties 404 (Not Found)
+assert-dbg.js:33 
+ Assertion failed: could not find any translatable text for key 'appTitle' in bundle file(s): ''
+ui5loader-dbg.js:1351 
+ 
+ GET https://port8080-workspaces-ws-dkh4d.us10.trial.applicationstudio.cloud.sap/Component-preload.js net::ERR_ABORTED 404 (Not Found)
+/test/flpSandbox.htm…ngux402li-display:1 
+ Refused to execute script from 'https://port8080-workspaces-ws-dkh4d.us10.trial.applicationstudio.cloud.sap/Component-preload.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+ui5loader-dbg.js:1351 
+ 
+ GET https://port8080-workspaces-ws-dkh4d.us10.trial.applicationstudio.cloud.sap/Component-preload.js net::ERR_ABORTED 404 (Not Found)
+/test/flpSandbox.htm…ngux402li-display:1 
+ Refused to execute script from 'https://port8080-workspaces-ws-dkh4d.us10.trial.applicationstudio.cloud.sap/Component-preload.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+Log-dbg.js:452 
+ 2024-03-27 10:19:07.583500 failed to load JavaScript resource: student00/com/sap/training/ux402/listdetail2/ux402listdetail2/Component-preload.js -  sap.ui.ModuleSystem
+jquery-dbg.js:10224 
+ 
+ GET https://port8080-workspaces-ws-dkh4d.us10.trial.applicationstudio.cloud.sap/i18n/i18n_en.properties 404 (Not Found)
+jquery-dbg.js:10224 
+ 
+ GET https://port8080-workspaces-ws-dkh4d.us10.trial.applicationstudio.cloud.sap/i18n/i18n_en.properties 404 (Not Found)
+﻿
 
