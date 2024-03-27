@@ -11,10 +11,13 @@ sap.ui.define([
 
         return Controller.extend("student00.com.sap.training.ux402.listdetail2.ux402listdetail2.controller.List", {
             onInit: function () {
-                this.oRouter = this.getOwnerComponent().getRouter();
-                var bReplace=!Device.system.phone; // true si el dispositivo no es un telefono     false= telefono
-
+                this.oRouter = this.getOwnerComponent().getRouter();	
             },
+
+            onSelect: function(oEvent){
+                        this._showDetail(oEvent.getParameter("listItem") ||oEvent.getSource()); 
+
+                    },
 
             _showDetail: function(oItem) {
                 var bReplace=!Device.system.phone; // true si el dispositivo no es un telefono     false= telefono
@@ -22,25 +25,35 @@ sap.ui.define([
                 this._navigateToCarrierDetails(sCarrierId,bReplace); //es fa una crida per mostra els details i se li passen les dues variables
             },
 
-            onSelect: function(oEvent){
-
-                var iID = oEvent.getSource().getSelectedItem().getBindingContext().getObject().Carrid;
-                console.log("ID: ", iID);
-            
-
-            },
             _navigateToCarrierDetails: function(sCarrierId , bReplace){
 
-                this.getRouter().navTo("carrierdetails",{
-                    objectId: sCarrierId
-				}, bReplace);
-                console.log("ID2: ", sCarrierId);
-                  
-
-
+                            this.oRouter.navTo("carrierdetails",{
+                                objectId: sCarrierId
+                            }, bReplace);
+                            console.log("ID2: ", sCarrierId);
+                        
 
             },
-                        
+        
+            // onByPassed: function (){
+            //     this._oList.removeSelections(true); //el true indica que la selecció s'ha d'esborrar completament
+            // },
+
+           
+            // _onListMatched: function() {
+            //     this.getListSelector().oWhenListLoadingIsDone.then( //
+            //     function(mParams) {
+            //     if (mParams.list.getMode() === "None") { //none vol dir que no hi ha res seleccionat
+            //     return;
+            //     }
+            //     var sObjectId = mParams.firstListitem.getBindingContext().getProperty("Carrid"); // si hi ha alguna cela seleccionada, 
+            //                                 //es crea una nova variable que agafa dels parametres, el primer de la llista, despres recuepra el seu context, 
+            //                                 //i del context s'agafa la porpiertat carrid de la llista
+            //     this._navigateToCarrierDetails(sObjectId,true);
+            //     }.bind(this)
+            //     );
+            // },
+                                 
            
 
             

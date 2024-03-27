@@ -5,8 +5,7 @@
 
 <f:DynamicPage id="dynamicPageOverviewId" headerExpanded="true" toggleHeaderOnTitleClick="true">
 
-    <!--  headerexpanded="true"  encambezado expandido por defecto
-    toggleHeaderOnTitleClick="true" que ele encabezado apareza o no con el clic-->
+   
     <f:title>
     <f:DynamicPageTitle id="DynamicPageTitle">
                 <f:heading>

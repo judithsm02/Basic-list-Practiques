@@ -124,12 +124,12 @@
           "controlAggregation": "beginColumnPages",
           "viewId": "list",
           "viewName": "List",
-          "viewLevel": 0
+          "viewLevel": 1
         },
         "carrierdetails": {
           "viewType": "XML",
           "transition": "slide",
-          "viewLevel": 1,
+          "viewLevel": 2,
           "controlAggregation": "midColumnPages",
           "viewName": "Detail",
           "viewId": "carrierdetails"
