@@ -1,10 +1,7 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/Device",
-    // "student00/com/sap/training/ux402/listdetail2/ux402listdetail2/controller/BaseController",
     "sap/m/MessageBox",
-
-
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
@@ -36,7 +33,9 @@ sap.ui.define([
 
                 this.getRouter().navTo("carrierdetails",{
                     objectId: sCarrierId
-				}, bReplace);  
+				}, bReplace);
+                console.log("ID2: ", sCarrierId);
+                  
 
 
 
