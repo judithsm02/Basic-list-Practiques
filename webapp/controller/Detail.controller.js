@@ -24,7 +24,7 @@ sap.ui.define([
           },
 
           _onObjectMatched: function (oEvent) {
-            this.getView().getModel("mainView").setProperty("/layout", "TwoColumnsMidExpanded");
+            this.getView().getModel("mainView").setProperty("layout", "TwoColumnsMidExpanded"); // hay un problema con el .setProperty
             var sObjectPath =
             "/UX_C_Carrier_TP('" + oEvent.getParameter("arguments").objectId + "')";
             this._bindView(sObjectPath);
@@ -32,23 +32,23 @@ sap.ui.define([
         
      
 
-    //       _bindView: function (sObjectPath) {
-    //         var oView = this.getView();
+          _bindView: function (sObjectPath) {
+            var oView = this.getView();
         
-    //         this.getView().bindElement({ //bind.element s'utilitza per associar la vista acual amb dades específiques. 
-    //         path: sObjectPath,
-    //         events: { 
-    //             change: this._onBindingChange.bind(this), // cuando los datos vinculados cambian, se ejecuta la funcion on.binding
-    //             dataRequested: function() { // es una funció que es crida quan es necessita que es carreguin dades
-    //             oView.setBusy(true);//Establece la vista como “ocupada” (indicando que se están cargando datos).
-    //         },
-    //         dataReceived: function() { //funció que es crida quan s'han rebut les dades
-    //         oView.setBusy(false); //es posa com a setbusy false. ja esta lliure la vista
-    //         }
-    //         }
-    //         });
+            this.getView().bindElement({ //bind.element s'utilitza per associar la vista acual amb dades específiques. 
+            path: sObjectPath,
+            events: { 
+                change: this._onBindingChange.bind(this), // cuando los datos vinculados cambian, se ejecuta la funcion on.binding
+                dataRequested: function() { // es una funció que es crida quan es necessita que es carreguin dades
+                oView.setBusy(true);//Establece la vista como “ocupada” (indicando que se están cargando datos).
+            },
+            dataReceived: function() { //funció que es crida quan s'han rebut les dades
+            oView.setBusy(false); //es posa com a setbusy false. ja esta lliure la vista
+            }
+            }
+            });
                        
-    //       },
+          },
           
     //       _onBindingChange: function () {
     //           var oView = this.getView(),
