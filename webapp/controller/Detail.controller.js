@@ -29,23 +29,40 @@ sap.ui.define([
             var sObjectPath =
             "/UX_C_Carrier_TP('" + oEvent.getParameter("arguments").objectId + "')";
             this._bindView(sObjectPath);
-        },
-
+        },         
           
-    //       _onBindingChange: function () {
-    //           var oView = this.getView(),
-    //               oElementBinding = oView.getElementBinding();
 
-    //           if (!oElementBinding.getBoundContext()) {
-    //               this.getOwnerComponent().getRouter().getTargets().display("detailObjectNotFound");
-    //               return;
-    //           }
-
-    //           var sPath = oElementBinding.getPath(),
-    //               oObject = oView.getModel().getObject(sPath);
+        //   _bindView: function(sObjectPath) {
+        //     var oView = this.getView();
+          
+        //     this.getView().bindElement({ //bind.element s'utilitza per associar la vista acual amb dades específiques. 
+        //     path: sObjectPath,
+        //     events: { 
+        //         change: this._onBindingChange.bind(this), // cuando los datos vinculados cambian, se ejecuta la funcion on.binding
+        //         dataRequested: function() { // es una funció que es crida quan es necessita que es carreguin dades
+        //         oView.setBusy(true);//Establece la vista como “ocupada” (indicando que se están cargando datos).
+        //     },
+        //     dataReceived: function() { //funció que es crida quan s'han rebut les dades
+        //     oView.setBusy(false); //es posa com a setbusy false. ja esta lliure la vista
+        //     }
+        //     }
+        //     });
+        //   },
   
-    //           this.oSemanticObject = oObject.type;              
-    //       },
+        //   _onBindingChange: function () {
+        //     var oView = this.getView(),
+        //         oElementBinding = oView.getElementBinding();
+
+        //     if (!oElementBinding.getBoundContext()) {
+        //         this.getOwnerComponent().getRouter().getTargets().display("detailObjectNotFound");
+        //         return;
+        //     }
+
+        //     var sPath = oElementBinding.getPath(),
+        //         oObject = oView.getModel().getObject(sPath);
+
+        //     this.oSemanticObject = oObject.type;              
+        // }
 
 
     });
