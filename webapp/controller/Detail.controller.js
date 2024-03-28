@@ -30,15 +30,6 @@ sap.ui.define([
             "/UX_C_Carrier_TP('" + oEvent.getParameter("arguments").objectId + "')";
             this._bindView(sObjectPath);
         },
-      
-        // _onNavigatoThirdPage: function(){
-        //   this.getView().getModel("mainView").setProperty("/layout","ThreeColumnsEndExpanded");
-        //   this.getOwnerComponent().getRouter().getRoute("secondcarrierdetails").attachPatternMatched(_onSecondObjectMatched,this);
-        // }
-      
-      
-
-      
 
           
     //       _onBindingChange: function () {
