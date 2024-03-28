@@ -115,6 +115,18 @@
               "masterlist",
               "carrierdetails"
           ]
+        },
+
+        {
+          "name": "secondcarrierdetails",
+          "pattern": "Carriers/{objectId}/about",
+          "titleTarget": "",
+          "greedy": false,
+          "target": [
+              "masterlist",
+              "carrierdetails",
+              "secondcarrierdetails"
+          ]
         }
       ],
       "targets": {
@@ -133,7 +145,16 @@
           "controlAggregation": "midColumnPages",
           "viewName": "Detail",
           "viewId": "carrierdetails"
+        },
+        "secondcarrierdetails": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewLevel": 3,
+          "controlAggregation": "endColumnPages",
+          "viewName": "SecondDetail",
+          "viewId": "secondcarrierdetails"
         }
+
       }
     },
     "rootView": {
