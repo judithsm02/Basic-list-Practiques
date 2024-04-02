@@ -30,31 +30,9 @@ sap.ui.define([
                             this.oRouter.navTo("carrierdetails",{
                                 objectId: sCarrierId
                             }, bReplace);
-                            console.log("ID2: ", sCarrierId);
                         
 
-            },
-        
-            // onByPassed: function (){
-            //     this._oList.removeSelections(true); //el true indica que la selecció s'ha d'esborrar completament
-            // },
-
-           
-            // _onListMatched: function() {
-            //     this.getListSelector().oWhenListLoadingIsDone.then( //
-            //     function(mParams) {
-            //     if (mParams.list.getMode() === "None") { //none vol dir que no hi ha res seleccionat
-            //     return;
-            //     }
-            //     var sObjectId = mParams.firstListitem.getBindingContext().getProperty("Carrid"); // si hi ha alguna cela seleccionada, 
-            //                                 //es crea una nova variable que agafa dels parametres, el primer de la llista, despres recuepra el seu context, 
-            //                                 //i del context s'agafa la porpiertat carrid de la llista
-            //     this._navigateToCarrierDetails(sObjectId,true);
-            //     }.bind(this)
-            //     );
-            // },
-                                 
-           
+            },         
 
             
         });

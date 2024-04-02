@@ -1,11 +1,12 @@
 <mvc:View controllerName="student00.com.sap.training.ux402.listdetail2.ux402listdetail2.controller.Detail"
-    xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+   xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
-    xmlns:ux="sap.uxap"
+    xmlns:f="sap.f"
+  xmlns:ux="sap.uxap"
     xmlns:layout="sap.ui.layout">
 
-   <ux:ObjectPageLayout id="objectPageLayout">
+
+<ux:ObjectPageLayout id="objectPageLayout">
         <ux:headerTitle>
           <ux:ObjectPageDynamicHeaderTitle id="objectPageDynamicHeader">
                 <ux:expandedHeading>
@@ -55,4 +56,5 @@
             </ux:ObjectPageSection>            
 		</ux:sections>
 	</ux:ObjectPageLayout>
+
 </mvc:View>
