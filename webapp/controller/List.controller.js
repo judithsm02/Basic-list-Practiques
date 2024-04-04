@@ -27,9 +27,9 @@ sap.ui.define([
 
             _navigateToCarrierDetails: function(sCarrierId , bReplace){
 
-                            this.oRouter.navTo("carrierdetails",{
-                                objectId: sCarrierId
-                            }, bReplace);
+                    this.oRouter.navTo("carrierdetails",{
+                        objectId: sCarrierId
+                    }, bReplace);
                         
 
             },         

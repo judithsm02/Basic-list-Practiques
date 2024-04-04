@@ -14,7 +14,7 @@ sap.ui.define(
       });
 
       this.getView().setModel(oViewModel, "mainView");
-      sap.ui.getCore().setModel(oViewModel, "mainView");    //se hace asi para que el modelo de datos esté en core y se pueda usar en todas las vistas
+      // sap.ui.getCore().setModel(oViewModel, "mainView");    //se hace asi para que el modelo de datos esté en core y se pueda usar en todas las vistas
       
 
       

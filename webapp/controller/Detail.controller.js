@@ -10,32 +10,27 @@ sap.ui.define([
 
       return Controller.extend("student00.com.sap.training.ux402.listdetail2.ux402listdetail2.controller.Detail", {
         onInit: function () {
-
-              var oViewModel = new JSONModel({
-                layout : "OneColumn"
-            });
-      
-             this.getView().setModel(oViewModel, "mainView");
-            sap.ui.getCore().setModel(oViewModel, "mainView"); // con estas dos lineas se soluciona el error de lectura de .setProperties
-
-      
-              this.oBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
-              var oViewModel = new JSONModel({
-                  busy: false,
-                  delay: 0
-              });
-              this.getOwnerComponent().getRouter().getRoute("carrierdetails").attachPatternMatched(this._onObjectMatched, this);
-              this.getView().setModel(oViewModel, "carrierdetails");
-
-          },
           
+            this.oBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
+            var oViewModel = new JSONModel({
+                            layout : "OneColumn" });
+            
+              var oViewModel = new JSONModel({
+                    busy: false,
+                    delay: 0
+                });    
+            this.getOwnerComponent().getRouter().getRoute("carrierdetails").attachPatternMatched(this._onObjectMatched, this);
+                this.getView().setModel(oViewModel, "carrierdetails");
 
-          _onObjectMatched: function (oEvent) {
-            sap.ui.getCore().getModel("mainView").setProperty("/layout", "TwoColumnsMidExpanded");
-            var sObjectPath =
-            "/UX_C_Carrier_TP('" + oEvent.getParameter("arguments").objectId + "')";
-            this._bindView(sObjectPath);
-        },         
+             
+              // this.getView().setModel(oViewModel, "mainView");
+              //  sap.ui.getCore().setModel(oViewModel, "mainView"); // con estas dos lineas se soluciona el error de lectura de .setProperties
+        
+                
+
+          },          
+
+          
           
         _bindView: function (sObjectPath) {
           // Set busy indicator during view binding
